@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Dog illustration">
+  <ellipse cx="120" cy="168" rx="62" ry="7" fill="#000" opacity=".08"/>
+  <path d="M68 62c-18 4-26 34-20 58 4 14 20 14 26-2 6-18 8-40-6-56z" fill="#8a5a3b"/>
+  <path d="M172 62c18 4 26 34 20 58-4 14-20 14-26-2-6-18-8-40 6-56z" fill="#8a5a3b"/>
+  <ellipse cx="120" cy="96" rx="54" ry="58" fill="#d9a066"/>
+  <ellipse cx="120" cy="124" rx="32" ry="26" fill="#f4dcc0"/>
+  <ellipse cx="146" cy="78" rx="16" ry="14" fill="#f4dcc0" opacity=".7"/>
+  <circle cx="98" cy="88" r="7" fill="#2b2118"/>
+  <circle cx="142" cy="88" r="7" fill="#2b2118"/>
+  <circle cx="100" cy="86" r="2.2" fill="#fff"/>
+  <circle cx="144" cy="86" r="2.2" fill="#fff"/>
+  <ellipse cx="120" cy="112" rx="11" ry="8" fill="#2b2118"/>
+  <path d="M120 120v8m0 0c-4 7-14 8-18 2m18-2c4 7 14 8 18 2" stroke="#2b2118" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M114 134c2 10 10 10 12 0z" fill="#e8737a"/>
+</svg>

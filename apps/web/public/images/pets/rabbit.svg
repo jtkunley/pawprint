@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Rabbit illustration">
+  <ellipse cx="120" cy="168" rx="52" ry="7" fill="#000" opacity=".08"/>
+  <ellipse cx="96" cy="46" rx="14" ry="40" fill="#efe6dc" transform="rotate(-12 96 46)"/>
+  <ellipse cx="144" cy="46" rx="14" ry="40" fill="#efe6dc" transform="rotate(12 144 46)"/>
+  <ellipse cx="96" cy="48" rx="6" ry="28" fill="#f2b8c0" transform="rotate(-12 96 48)"/>
+  <ellipse cx="144" cy="48" rx="6" ry="28" fill="#f2b8c0" transform="rotate(12 144 48)"/>
+  <ellipse cx="120" cy="116" rx="50" ry="46" fill="#f7f1ea"/>
+  <circle cx="102" cy="108" r="6.5" fill="#3a2a2a"/>
+  <circle cx="138" cy="108" r="6.5" fill="#3a2a2a"/>
+  <circle cx="104" cy="106" r="2" fill="#fff"/>
+  <circle cx="140" cy="106" r="2" fill="#fff"/>
+  <ellipse cx="88" cy="126" rx="9" ry="6" fill="#f2b8c0" opacity=".6"/>
+  <ellipse cx="152" cy="126" rx="9" ry="6" fill="#f2b8c0" opacity=".6"/>
+  <path d="M114 122h12l-6 6z" fill="#e8737a"/>
+  <path d="M120 128v6m0 0c-3 5-9 5-12 1m12-1c3 5 9 5 12 1" stroke="#7a6a6a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <rect x="115" y="134" width="10" height="9" rx="2" fill="#fff" stroke="#d9cfc4"/>
+</svg>

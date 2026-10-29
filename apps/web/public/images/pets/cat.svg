@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Cat illustration">
+  <ellipse cx="120" cy="168" rx="58" ry="7" fill="#000" opacity=".08"/>
+  <path d="M70 44l10 48 30-24z" fill="#9aa3ad"/>
+  <path d="M170 44l-10 48-30-24z" fill="#9aa3ad"/>
+  <path d="M77 56l6 28 16-14z" fill="#f2b8c0"/>
+  <path d="M163 56l-6 28-16-14z" fill="#f2b8c0"/>
+  <ellipse cx="120" cy="104" rx="56" ry="52" fill="#b8c0c9"/>
+  <path d="M104 58c4 10 4 18 0 24M120 54v26M136 58c-4 10-4 18 0 24" stroke="#8b949e" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="98" cy="100" rx="8" ry="10" fill="#4a7c59"/>
+  <ellipse cx="142" cy="100" rx="8" ry="10" fill="#4a7c59"/>
+  <ellipse cx="98" cy="101" rx="2.5" ry="8" fill="#1d2a22"/>
+  <ellipse cx="142" cy="101" rx="2.5" ry="8" fill="#1d2a22"/>
+  <path d="M114 118h12l-6 7z" fill="#e8737a"/>
+  <path d="M120 125c-3 6-10 7-14 3m14-3c3 6 10 7 14 3" stroke="#3d4650" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M86 120l-28-4m28 10l-28 6m96-12l28-4m-28 10l28 6" stroke="#6b7480" stroke-width="2" stroke-linecap="round"/>
+</svg>
