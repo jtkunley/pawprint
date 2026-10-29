@@ -1,0 +1,32 @@
+{
+  "name": "pawprint",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A small reference pet-adoption catalog built with NestJS, React, and Storybook.",
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @pawprint/contracts build && pnpm --parallel --filter @pawprint/api --filter @pawprint/web dev",
+    "storybook": "pnpm --filter @pawprint/contracts build && pnpm --filter @pawprint/web storybook",
+    "build-storybook": "pnpm --filter @pawprint/contracts build && pnpm --filter @pawprint/web build-storybook",
+    "build": "pnpm -r build",
+    "test": "pnpm --filter @pawprint/contracts build && pnpm -r test && pnpm test:e2e",
+    "test:e2e": "playwright test",
+    "lint": "pnpm --filter @pawprint/contracts build && eslint . && tsc -p tsconfig.json && pnpm -r typecheck",
+    "setup:browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-storybook": "10.6.5",
+    "globals": "^17.13.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
