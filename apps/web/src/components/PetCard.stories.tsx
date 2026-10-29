@@ -19,7 +19,10 @@ const meta = preview.meta({
 export const Available = meta.story({
   play: async ({ canvas }) => {
     await expect(canvas.getByText('Available')).toBeVisible();
-    await expect(canvas.getByRole('link', { name: 'Biscuit' })).toHaveAttribute('href', '/pets/pet-001');
+    await expect(canvas.getByRole('link', { name: 'Biscuit' })).toHaveAttribute(
+      'href',
+      '/pets/pet-001',
+    );
   },
 });
 
@@ -59,7 +62,13 @@ export const Skeleton = meta.story({
 });
 
 export const GridSkeleton = meta.story({
-  decorators: [(Story) => <div style={{ width: 'min(960px, 100%)' }}><Story /></div>],
+  decorators: [
+    (Story) => (
+      <div style={{ width: 'min(960px, 100%)' }}>
+        <Story />
+      </div>
+    ),
+  ],
   render: () => <PetGridSkeleton count={3} />,
   play: async ({ canvas }) => {
     await expect(canvas.getByRole('status')).toHaveTextContent('Loading pets…');

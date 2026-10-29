@@ -6,7 +6,9 @@ test.beforeEach(async ({ request }) => {
 
 test('an adopter can find a pet and submit an application', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1, name: 'Meet your new best friend' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Meet your new best friend' }),
+  ).toBeVisible();
   await expect(page.getByText('12 pets found')).toBeVisible();
 
   await page.getByLabel('Species').selectOption({ label: 'Dog' });

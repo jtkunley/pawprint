@@ -36,7 +36,9 @@ export const Loading = meta.story({
 export const EmptyResults = meta.story({
   parameters: { route: '/?search=zzz' },
   play: async ({ canvas, userEvent }) => {
-    await expect(await canvas.findByRole('heading', { name: 'No pets match your search' })).toBeVisible();
+    await expect(
+      await canvas.findByRole('heading', { name: 'No pets match your search' }),
+    ).toBeVisible();
     await userEvent.click(canvas.getByRole('button', { name: 'Show all pets' }));
     await expect(await canvas.findByText('6 pets found')).toBeVisible();
     await expect(canvas.getByLabelText('Search by name')).toHaveValue('');
@@ -48,7 +50,9 @@ export const EmptyCatalog = meta.story({
     msw.use(petHandlers.list([]));
   },
   play: async ({ canvas }) => {
-    await expect(await canvas.findByRole('heading', { name: 'No pets match your search' })).toBeVisible();
+    await expect(
+      await canvas.findByRole('heading', { name: 'No pets match your search' }),
+    ).toBeVisible();
     await expect(canvas.queryByRole('button', { name: 'Show all pets' })).not.toBeInTheDocument();
   },
 });
@@ -85,7 +89,9 @@ export const Filtering = meta.story({
 
     await step('Filter by status with no matches', async () => {
       await userEvent.selectOptions(canvas.getByLabelText('Status'), 'Adopted');
-      await expect(await canvas.findByRole('heading', { name: 'No pets match your search' })).toBeVisible();
+      await expect(
+        await canvas.findByRole('heading', { name: 'No pets match your search' }),
+      ).toBeVisible();
     });
 
     await step('Clear filters', async () => {

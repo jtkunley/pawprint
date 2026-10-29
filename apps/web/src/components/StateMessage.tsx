@@ -19,7 +19,10 @@ export function StateMessage({
   headingLevel: Heading = 'h2',
 }: StateMessageProps) {
   return (
-    <div className={`state-message state-message--${tone}`} role={tone === 'error' ? 'alert' : undefined}>
+    <div
+      className={`state-message state-message--${tone}`}
+      role={tone === 'error' ? 'alert' : undefined}
+    >
       <span className="state-message__icon">
         <PawIcon size={32} />
       </span>

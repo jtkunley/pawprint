@@ -69,7 +69,9 @@ export function CatalogFilters({ filters, onChange, debounceMs = 250 }: CatalogF
         <select
           id={`${id}-species`}
           value={filters.species}
-          onChange={(event) => onChange({ ...filters, species: event.target.value as Species | '' })}
+          onChange={(event) =>
+            onChange({ ...filters, species: event.target.value as Species | '' })
+          }
         >
           <option value="">All species</option>
           {SPECIES.map((species) => (

@@ -39,7 +39,11 @@ export const ChangingFilters = meta.story({
 
     await userEvent.type(canvas.getByLabelText('Search by name'), 'Mochi');
     await waitFor(() =>
-      expect(args.onChange).toHaveBeenLastCalledWith({ ...EMPTY_FILTERS, species: 'cat', search: 'Mochi' }),
+      expect(args.onChange).toHaveBeenLastCalledWith({
+        ...EMPTY_FILTERS,
+        species: 'cat',
+        search: 'Mochi',
+      }),
     );
 
     await userEvent.click(canvas.getByRole('button', { name: 'Clear filters' }));

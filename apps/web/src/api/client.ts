@@ -18,7 +18,9 @@ export class ApiError extends Error {
     readonly status: number,
     readonly body: ApiErrorBody | null,
   ) {
-    super(body?.message ?? (status === 0 ? 'Network request failed' : `Request failed (${status})`));
+    super(
+      body?.message ?? (status === 0 ? 'Network request failed' : `Request failed (${status})`),
+    );
     this.name = 'ApiError';
   }
 }

@@ -22,7 +22,9 @@ export const LongNameWithoutPhoto = meta.story({
   parameters: { route: '/pets/pet-006' },
   play: async ({ canvas }) => {
     await expect(
-      await canvas.findByRole('img', { name: 'No photo of Sir Reginald Wigglesworth-Fluffington III yet' }),
+      await canvas.findByRole('img', {
+        name: 'No photo of Sir Reginald Wigglesworth-Fluffington III yet',
+      }),
     ).toBeVisible();
   },
 });
@@ -30,7 +32,9 @@ export const LongNameWithoutPhoto = meta.story({
 export const Adopted = meta.story({
   parameters: { route: '/pets/pet-005' },
   play: async ({ canvas }) => {
-    await expect(await canvas.findByRole('heading', { name: 'Juniper has found a home' })).toBeVisible();
+    await expect(
+      await canvas.findByRole('heading', { name: 'Juniper has found a home' }),
+    ).toBeVisible();
     await expect(canvas.queryByRole('form')).not.toBeInTheDocument();
   },
 });
@@ -91,7 +95,9 @@ export const SuccessfulSubmission = meta.story({
 
     await step('Submit', async () => {
       await userEvent.click(within(form).getByRole('button', { name: 'Send application' }));
-      await expect(within(form).getByRole('button', { name: 'Sending application…' })).toBeDisabled();
+      await expect(
+        within(form).getByRole('button', { name: 'Sending application…' }),
+      ).toBeDisabled();
     });
 
     const heading = await canvas.findByRole('heading', { name: 'Application received!' });
@@ -116,7 +122,9 @@ export const ServerValidationError = meta.story({
     );
     await userEvent.click(within(form).getByRole('button', { name: 'Send application' }));
 
-    await expect(await within(form).findByText('This email address has been blocked')).toBeVisible();
+    await expect(
+      await within(form).findByText('This email address has been blocked'),
+    ).toBeVisible();
   },
 });
 

@@ -1,6 +1,14 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ApiErrorSchema, type Pet, type PetList, type PetQuery, PetListSchema, PetQuerySchema, PetSchema } from '@pawprint/contracts';
+import {
+  ApiErrorSchema,
+  type Pet,
+  type PetList,
+  type PetQuery,
+  PetListSchema,
+  PetQuerySchema,
+  PetSchema,
+} from '@pawprint/contracts';
 import { PetsService } from './pets.service.js';
 
 @ApiTags('pets')

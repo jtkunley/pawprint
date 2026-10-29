@@ -30,6 +30,8 @@ export const DisabledInProduction = meta.story({
   },
   play: async ({ canvas, userEvent }) => {
     await userEvent.click(canvas.getByRole('button', { name: 'Reset demo data' }));
-    await expect(await canvas.findByText('Demo reset is disabled in this environment.')).toBeVisible();
+    await expect(
+      await canvas.findByText('Demo reset is disabled in this environment.'),
+    ).toBeVisible();
   },
 });

@@ -14,7 +14,11 @@ export function PetImage({ pet, variant = 'card' }: PetImageProps) {
 
   if (!pet.imageUrl || failed) {
     return (
-      <div className={`${className} pet-image--missing`} role="img" aria-label={`No photo of ${pet.name} yet`}>
+      <div
+        className={`${className} pet-image--missing`}
+        role="img"
+        aria-label={`No photo of ${pet.name} yet`}
+      >
         <PawIcon size={variant === 'hero' ? 56 : 40} />
         <span aria-hidden="true">Photo coming soon</span>
       </div>
@@ -23,7 +27,12 @@ export function PetImage({ pet, variant = 'card' }: PetImageProps) {
 
   return (
     <div className={className}>
-      <img src={pet.imageUrl} alt={`Photo of ${pet.name}`} loading="lazy" onError={() => setFailed(true)} />
+      <img
+        src={pet.imageUrl}
+        alt={`Photo of ${pet.name}`}
+        loading="lazy"
+        onError={() => setFailed(true)}
+      />
     </div>
   );
 }

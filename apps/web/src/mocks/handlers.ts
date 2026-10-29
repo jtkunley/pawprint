@@ -9,7 +9,10 @@ import { delay, http, HttpResponse } from 'msw';
 import { allPets, makeApplication } from './fixtures';
 
 const error = (statusCode: number, errorName: string, message: string) =>
-  HttpResponse.json<ApiErrorBody>({ statusCode, error: errorName, message }, { status: statusCode });
+  HttpResponse.json<ApiErrorBody>(
+    { statusCode, error: errorName, message },
+    { status: statusCode },
+  );
 
 /** Mirrors the API's filtering closely enough for stories; sorting is by name only. */
 function filterPets(pets: Pet[], url: URL): Pet[] {
@@ -74,9 +77,12 @@ export const applicationHandlers = {
         );
       }
       const pet = allPets.find((candidate) => candidate.id === result.data.petId);
-      return HttpResponse.json(makeApplication({ ...result.data, petName: pet?.name ?? 'your pet' }), {
-        status: 201,
-      });
+      return HttpResponse.json(
+        makeApplication({ ...result.data, petName: pet?.name ?? 'your pet' }),
+        {
+          status: 201,
+        },
+      );
     }),
 
   /** Server-side validation failure that the client could not have predicted. */

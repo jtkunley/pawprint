@@ -51,7 +51,11 @@ function PetDetailContent({ petId }: { petId: string }) {
                 Browse all pets
               </Link>
             ) : (
-              <button type="button" className="button button--primary" onClick={() => pet.refetch()}>
+              <button
+                type="button"
+                className="button button--primary"
+                onClick={() => pet.refetch()}
+              >
                 Try again
               </button>
             )
@@ -73,7 +77,9 @@ function PetDetailContent({ petId }: { petId: string }) {
   } else if (pet.data.status === 'adopted') {
     aside = (
       <StateMessage title={`${pet.data.name} has found a home`}>
-        <p>This pet has already been adopted. There are plenty of other friends waiting to meet you!</p>
+        <p>
+          This pet has already been adopted. There are plenty of other friends waiting to meet you!
+        </p>
       </StateMessage>
     );
   } else {

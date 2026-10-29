@@ -21,6 +21,9 @@ export const Default = meta.story({
     const heading = canvas.getByRole('heading', { name: 'Application received!' });
     await expect(heading).toHaveFocus();
     await expect(canvas.getByText('app-0001')).toBeVisible();
-    await expect(canvas.getByRole('link', { name: 'Browse more pets' })).toHaveAttribute('href', '/');
+    await expect(canvas.getByRole('link', { name: 'Browse more pets' })).toHaveAttribute(
+      'href',
+      '/',
+    );
   },
 });

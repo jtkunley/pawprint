@@ -98,15 +98,20 @@ describe('Pawprint API (e2e)', () => {
     });
 
     it('returns 404 for unknown pets', async () => {
-      await http()
-        .get('/api/pets/pet-999')
-        .expect(404, { statusCode: 404, error: 'Not Found', message: 'Pet "pet-999" was not found' });
+      await http().get('/api/pets/pet-999').expect(404, {
+        statusCode: 404,
+        error: 'Not Found',
+        message: 'Pet "pet-999" was not found',
+      });
     });
   });
 
   describe('adoption applications', () => {
     it('creates an application and marks the pet pending', async () => {
-      const { body } = await http().post('/api/adoption-applications').send(application).expect(201);
+      const { body } = await http()
+        .post('/api/adoption-applications')
+        .send(application)
+        .expect(201);
 
       expect(AdoptionApplicationSchema.parse(body)).toEqual({
         ...application,
