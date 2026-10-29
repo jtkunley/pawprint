@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "A small reference pet-adoption catalog built with NestJS, React, and Storybook.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtkunley/pawprint.git"
+  },
+  "homepage": "https://github.com/jtkunley/pawprint#readme",
   "type": "module",
   "packageManager": "pnpm@12.16.1",
   "engines": {
@@ -15,8 +21,10 @@
     "build": "pnpm -r build",
     "test": "pnpm --filter @pawprint/contracts build && pnpm -r test && pnpm test:e2e",
     "test:e2e": "playwright test",
-    "lint": "pnpm --filter @pawprint/contracts build && eslint . && tsc -p tsconfig.json && pnpm -r typecheck",
-    "setup:browsers": "playwright install chromium"
+    "lint": "pnpm --filter @pawprint/contracts build && eslint . && prettier --check . && tsc -p tsconfig.json && pnpm -r typecheck",
+    "setup:browsers": "playwright install chromium",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -26,6 +34,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-storybook": "10.6.5",
     "globals": "^17.13.0",
+    "prettier": "^3.9.10",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.72.1"
   }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Pawprint React web app and Storybook.",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
