@@ -4,6 +4,8 @@ import {
   HOME_TYPES,
   type HomeType,
   type Pet,
+  toValidationIssues,
+  type ValidationIssue,
 } from '@pawprint/contracts';
 import { type FormEvent, useId, useRef, useState } from 'react';
 import { ApiError } from '../api/client';
@@ -38,7 +40,7 @@ export interface AdoptionFormProps {
   error?: Error | null;
 }
 
-function firstErrorPerField(issues: { path: string; message: string }[]): FieldErrors {
+function firstErrorPerField(issues: ValidationIssue[]): FieldErrors {
   const errors: FieldErrors = {};
   for (const { path, message } of issues) {
     if ((FIELD_ORDER as string[]).includes(path)) errors[path as Field] ??= message;
@@ -53,7 +55,8 @@ export function AdoptionForm({ pet, onSubmit, isSubmitting = false, error }: Ado
   const [clientErrors, setClientErrors] = useState<FieldErrors>({});
   const [editedSinceSubmit, setEditedSinceSubmit] = useState<ReadonlySet<string>>(new Set());
 
-  const serverIssues = error instanceof ApiError && error.status === 400 ? error.body?.issues : undefined;
+  const serverIssues =
+    error instanceof ApiError && error.status === 400 ? error.body?.issues : undefined;
   const serverErrors = firstErrorPerField(
     (serverIssues ?? []).filter((issue) => !editedSinceSubmit.has(issue.path)),
   );
@@ -81,9 +84,7 @@ export function AdoptionForm({ pet, onSubmit, isSubmitting = false, error }: Ado
     const result = CreateAdoptionApplicationSchema.safeParse({ ...values, petId: pet.id });
 
     if (!result.success) {
-      const nextErrors = firstErrorPerField(
-        result.error.issues.map((issue) => ({ path: issue.path.join('.'), message: issue.message })),
-      );
+      const nextErrors = firstErrorPerField(toValidationIssues(result.error));
       setClientErrors(nextErrors);
       const firstInvalid = FIELD_ORDER.find((field) => nextErrors[field]);
       if (firstInvalid) focusField(firstInvalid);
@@ -95,8 +96,9 @@ export function AdoptionForm({ pet, onSubmit, isSubmitting = false, error }: Ado
   };
 
   const describedBy = (field: Field, hint?: boolean) =>
-    [hint && `${id}-${field}-hint`, errors[field] && `${id}-${field}-error`].filter(Boolean).join(' ') ||
-    undefined;
+    [hint && `${id}-${field}-hint`, errors[field] && `${id}-${field}-error`]
+      .filter(Boolean)
+      .join(' ') || undefined;
 
   const fieldError = (field: Field) =>
     errors[field] && (
